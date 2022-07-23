@@ -142,7 +142,7 @@ To setup this project locally on your computer follow the steps below.
 <br/>
 <br/>
 <strong>Transfer</strong>:<br/>
-<img src="Tranfer.JPG" max-width="auto" height="600" />
+<img src="Transfer.JPG" max-width="auto" height="600" />
 <br/>
 <br/>
 
