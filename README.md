@@ -117,32 +117,32 @@ To setup this project locally on your computer follow the steps below.
 ## ScreenShots
 
 <strong>Sign Up</strong>:<br>
-<img src="SignUp.jpg" max-width="auto" height="00" />
+<img src="SignUp.JPG" max-width="auto" height="00" />
 <br>
 <br/>
 
 <strong>Login</strong>:<br/>
-<img src="Login.jpg" max-width="auto" height="600" />
+<img src="Login.JPG" max-width="auto" height="600" />
 <br/>
 <br/>
 <strong>Main Menu</strong>: <br/>
-<img src="Main_Menu.jpg" max-width="auto" height="600" />
+<img src="Main_Menu.JPG" max-width="auto" height="600" />
 <br/>
 <br/>
 <strong>Withdraw</strong>: <br/>
-<img src="Withdraw.jpg" max-width="auto" height="600" />
+<img src="Withdraw.JPG" max-width="auto" height="600" />
 <br/>
 <br/>
 <strong>Depost</strong>: <br/>
-<img src="Deposit.jpg" max-width="auto" height="600" />
+<img src="Deposit.JPG" max-width="auto" height="600" />
 <br/>
 <br/>
 <strong>Bill Payment</strong>:<br/>
-<img src="Bill_Payment.jpg" max-width="auto" height="600" />
+<img src="Bill_Payment.JPG" max-width="auto" height="600" />
 <br/>
 <br/>
 <strong>Transfer</strong>:<br/>
-<img src="Tranfer.jpg" max-width="auto" height="600" />
+<img src="Tranfer.JPG" max-width="auto" height="600" />
 <br/>
 <br/>
 
