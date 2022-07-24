@@ -158,7 +158,7 @@ The following are the team members for the project:
 - [Rafay Qureshi](https://github.com/RafayQureshi12)
 - [Talha Khalid](https://github.com/MuhammadTalha28)
 - [Abrar Ali](www.github.com/abrarbasra)
-- [Abdullah Ijaz](www.github.com)
+- [Abdullah Ijaz](https://github.com/abdullahijaz707)
 
 <!-- CONTACT -->
 
