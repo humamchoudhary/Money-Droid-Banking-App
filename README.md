@@ -145,6 +145,11 @@ To setup this project locally on your computer follow the steps below.
 <img src="Transfer.JPG" max-width="auto" height="600" />
 <br/>
 <br/>
+<strong>Transfer</strong>:<br/>
+<img src="Transection_Log.JPG" max-width="auto" height="600" />
+<br/>
+<br/>
+
 
 ## Contribution
 
