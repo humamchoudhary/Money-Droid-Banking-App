@@ -27,7 +27,7 @@ def Window_Main():
         [sg.Text("")],
         [sg.Button('Bill Payment', size=(20, 3)), sg.Button(
             'Transfer Money', size=(20, 3))],
-        [sg.Button('Transection Log', size=(30, 2))],
+        [sg.Button('Transection History', size=(30, 2))],
         [sg.Text("")],
         [sg.Text("")],
         [sg.Button('Logout', size=(30, 2))],
@@ -46,7 +46,7 @@ def Main(account):
 
     while True:
         event, values = window.read()
-     
+
         if event == "Withdraw":
             window.close()
             Withdraw_GUI.Withdraw(account)
