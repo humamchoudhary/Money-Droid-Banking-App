@@ -52,14 +52,7 @@ class DB:
             raise InvalidRefNumber("Invalid reference number")
 
     def Deposit(self, card_number: int, amount: float, exp_data: str, cvv: int):
-        """ 
-        It will start with 4, 5 and 6
-        It will be 16 digits long
-        Numbers must contain only digits
-        It may have digits in four groups separated by '-'
-        It must not use any other separator like space or underscore
-        It must not have 4 or more consecutive same digits
-        """
+
         try:
             card_number = int(card_number)
         except:

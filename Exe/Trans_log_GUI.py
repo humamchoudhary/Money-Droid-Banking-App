@@ -12,13 +12,13 @@ db = App.DB()
 def Trans_Log_win(col_layout):
 
     layout = [
-        [sg.Text("Transection Log", font=font_big)],
+        [sg.Text("Transection History", font=font_big)],
         [sg.Column(col_layout, scrollable=True,
                    vertical_scroll_only=True, expand_x=True, expand_y=True, key="Col")],
         [sg.Button("Back", size=(10, 2))]
     ]
 
-    return sg.Window('Money Droid - Withdraw', layout, size=(
+    return sg.Window('Money Droid - Transection History', layout, size=(
         400, 600), element_justification='center', resizable=True)
 
 
