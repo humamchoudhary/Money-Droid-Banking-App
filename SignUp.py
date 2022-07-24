@@ -25,6 +25,7 @@ class Account:
         self.address = address
         self.password = password
         self.balance = 0
+        self.transection_log = []
 
     def GenToken(self):
         uuid_str = uuid.uuid1().urn

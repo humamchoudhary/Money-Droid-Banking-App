@@ -41,4 +41,4 @@ class Login_Page:
 
 
 if __name__ == '__main__':
-    login = Login_Page("Huma", "1234")
+    login = Login_Page("Humam", "1234")

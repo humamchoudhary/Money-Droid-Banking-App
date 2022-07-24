@@ -4,6 +4,7 @@ import Login_GUI
 import Transfer_GUI
 import Withdraw_GUI
 import Deposit_GUI
+import Trans_log_GUI
 font_huge = ("Arial", 20)
 font_small = ("Arial", 12)
 font_big = ("Arial", 15)
@@ -26,6 +27,7 @@ def Window_Main():
         [sg.Text("")],
         [sg.Button('Bill Payment', size=(20, 3)), sg.Button(
             'Transfer Money', size=(20, 3))],
+        [sg.Button('Transection Log', size=(30, 2))],
         [sg.Text("")],
         [sg.Text("")],
         [sg.Button('Logout', size=(30, 2))],
@@ -44,9 +46,7 @@ def Main(account):
 
     while True:
         event, values = window.read()
-        # print(values)
-        # print(event)
-
+     
         if event == "Withdraw":
             window.close()
             Withdraw_GUI.Withdraw(account)
@@ -62,7 +62,9 @@ def Main(account):
         if event == "Deposit":
             window.close()
             Deposit_GUI.Deposit(account)
-
+        if event == "Transection Log":
+            window.close()
+            Trans_log_GUI.Trans_Log(account)
         if event == "Logout":
             window.close()
             Login_GUI.Login()

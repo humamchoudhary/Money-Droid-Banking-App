@@ -39,15 +39,17 @@ class DB:
             raise InvalidAccountNumberError("Invalid amount")
         if len(ref_num) == 14:
             if self.account.balance - amount >= 0:
-                self.Update(self.token, self.account)
                 self.account.balance -= amount  # Update account balance  ----update----
-                print(f"Bill payed!\nNew balance: {self.account.balance}")
+                self.Transection_Log("Incoming", amount,
+                                     self.account, purpose=f"{bill_type} bill Payment")
+                self.Update(self.token, self.account)
+
             else:
                 # Insuff balance ----error----
                 raise InsufficientBalanceError(
                     "Insufficient Balance. Please add some funds")
         else:
-            print("Invalid reference number")
+            raise InvalidRefNumber("Invalid reference number")
 
     def Deposit(self, card_number: int, amount: float, exp_data: str, cvv: int):
         """ 
@@ -88,7 +90,7 @@ class DB:
                 transaction = False
                 # Raise invalid card ----error----
                 raise InvalidCardError(
-                    f"Length of the a card number must be 16 but {len(card_number)} was given")
+                    f"Length of the a card number must be 16 but {len(str(card_number))} was given")
         else:
             transaction = False
             # Raise invalid card ----error----
@@ -101,6 +103,8 @@ class DB:
             raise InvalidCVVError("Invalid CVV")
         if transaction:
             self.account.balance += amount  # Update account balance  ----update----
+            self.Transection_Log("Incoming", amount,
+                                 self.account, "Deposit")
             self.Update(self.token, self.account)
         else:
 
@@ -140,15 +144,14 @@ class DB:
             if self.Check_Bal(amount):
                 self.account.balance -= amount  # Update account balance  ----update----
                 data = self.DB.search(self.User.email == account_number)
+                self.Transection_Log("Outgoing", amount,
+                                     self.account, "Withdraw")
                 self.Update(self.token, self.account)
             else:
                 raise InsufficientBalanceError("Insufficient Balance")
 
     def Trans_Money(self, account_number: str, amount: float, purpose: str):
-        try:
-            account_number = int(account_number)
-        except:
-            raise InvalidAccountNumberError("Invalid account number")
+
         try:
             amount = float(amount)
         except:
@@ -167,11 +170,14 @@ class DB:
                 self.account2.balance += amount
                 self.account.balance -= amount
                 # Update account balance  ----update----
+                self.Transection_Log("Outgoing", amount, self.account, purpose)
                 self.Update(self.token, self.account)
                 # Update account balance  ----update----
                 data = self.DB.search(self.User.email == account_number)
                 data = data[0]
                 token2 = data["token"]
+                self.Transection_Log("Incoming", amount,
+                                     self.account2, purpose)
                 self.Update(token2, self.account2)
             else:
                 raise InsufficientBalanceError("Insuffi balance")
@@ -204,15 +210,7 @@ class DB:
             pickle.dump(encrypt, enc_file, None)
         enc_file.close()
 
-
-def main():
-
-    db = DB()
-    # db.Load_Account("Humamch")
-    # db.Deposit(4123546789154215, 20000, "11/11/11", 123)
-    # db.Trans_Money("humam2@gmail.com", 2000, "ads")
-    db.Print()
-
-
-if __name__ == '__main__':
-    main()
+    def Transection_Log(self, transaction_type, amount, account, purpose=""):
+        transection = {"Type": transaction_type,
+                       "Amount": amount, "Purpose": purpose}
+        account.transection_log.append(transection)

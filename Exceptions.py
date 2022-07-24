@@ -32,6 +32,12 @@ class InvalidPasswordError(Exception):
     """Password does not match"""
     pass
 
+
 class InvalidAmount(Exception):
     "Invalid amount"
+    pass
+
+
+class InvalidRefNumber(Exception):
+    "Invalid Ref Number of the bill"
     pass
