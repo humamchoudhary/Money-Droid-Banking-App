@@ -145,6 +145,11 @@ To setup this project locally on your computer follow the steps below.
 <img src="Transfer.JPG" max-width="auto" height="600" />
 <br/>
 <br/>
+<strong>Transfer</strong>:<br/>
+<img src="Transection_Log.JPG" max-width="auto" height="600" />
+<br/>
+<br/>
+
 
 ## Contribution
 
@@ -153,7 +158,7 @@ The following are the team members for the project:
 - [Rafay Qureshi](https://github.com/RafayQureshi12)
 - [Talha Khalid](https://github.com/MuhammadTalha28)
 - [Abrar Ali](www.github.com/abrarbasra)
-- [Abdullah Ijaz](www.github.com)
+- [Abdullah Ijaz](https://github.com/abdullahijaz707)
 
 <!-- CONTACT -->
 
