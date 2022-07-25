@@ -56,6 +56,7 @@ class Signup_Page:
         accounts = {}
         Signup = False
         email = email.lower()
+        
         password = password.encode()
         hash = hashlib.sha256(password)
         hashhex = hash.hexdigest()

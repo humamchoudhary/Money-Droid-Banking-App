@@ -1,5 +1,6 @@
 import PySimpleGUI as sg
 from SignUp import Signup_Page
+import Exceptions
 import Login_GUI
 
 
@@ -60,12 +61,16 @@ def SignUp():
             if filled:
 
                 try:
-                    signup.Regester(
-                        values["fname"], values["mname"], values["lname"], values["Address"], values["GEND"], values["Email"], values["Username"], values["Password"])
-                    window["Notify"].Update(
-                        "Sign up successful", text_color="Red")
-                    window.close()
-                    Login_GUI.Login()
+                    if len(values["Password"]) <= 6:
+                        raise Exceptions.InvalidPasswordError(
+                            "Password to short!")
+                    else:
+                        signup.Regester(
+                            values["fname"], values["mname"], values["lname"], values["Address"], values["GEND"], values["Email"], values["Username"], values["Password"])
+                        window["Notify"].Update(
+                            "Sign up successful", text_color="Red")
+                        window.close()
+                        Login_GUI.Login()
 
                 except Exception as e:
                     window["Notify"].Update(f"{e}", text_color="Red")

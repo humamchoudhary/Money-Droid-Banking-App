@@ -15,7 +15,6 @@ def Trans_Log_win(col_layout):
         [sg.Text("Transection History", font=font_big)],
         [sg.Column(col_layout, scrollable=True,
                    vertical_scroll_only=True, expand_x=True, expand_y=True, key="Col")],
-        [sg.Button("Back", size=(10, 2))]
     ]
 
     return sg.Window('Money Droid - Transection History', layout, size=(
@@ -33,6 +32,8 @@ def Trans_Log(account):
                            sg.Text("Rs", font=font_small)])
         col_layout.append([sg.Text(i["Purpose"])])
         col_layout.append([sg.HorizontalSeparator(color="White")])
+
+    col_layout.append([sg.Button("Back", size=(10, 2), expand_x=True)])
     window = Trans_Log_win(col_layout)
     window.Finalize()
 

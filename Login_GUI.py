@@ -44,9 +44,13 @@ def Login():
         # print(event)
         if event == 'Login':
             try:
-                login = Login_Page(
-                    values["Username"], values["Password"])
-                account = login.Get_Account()
+                if len(values["Password"]) <= 6:
+                    raise InvalidPasswordError("Password to short!")
+                else:
+                    login = Login_Page(
+                        values["Username"], values["Password"])
+
+                    account = login.Get_Account()
                 # print(account.__dict__)
                 # print(account)
 
