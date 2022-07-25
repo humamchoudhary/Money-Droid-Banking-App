@@ -21,7 +21,6 @@ class Login_Page:
             file = open(f'{token}.pkl', 'rb')
             enc_account = pickle.load(file)
         except FileNotFoundError:
-
             raise AccountNotFoundError("User does not exists!")
         except IndexError:
             raise AccountNotFoundError("User does not exists!")

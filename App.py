@@ -204,6 +204,14 @@ class DB:
         enc_file.close()
 
     def Transection_Log(self, transaction_type, amount, account, purpose=""):
+        if type(account) is Current_Account and transaction_type == "Outgoing":
+            account.Transection()
+            amount += account.fee
+
+        if type(account) is Savings_Account and transaction_type == "Incoming":
+            account.Transection()
+            amount += account.balance*account.intrest
+
         transection = {"Type": transaction_type,
                        "Amount": amount, "Purpose": purpose}
         account.transection_log.append(transection)

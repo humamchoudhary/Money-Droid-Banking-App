@@ -1,13 +1,12 @@
 import PySimpleGUI as sg
 from SignUp import Signup_Page
-import Exceptions
 import Login_GUI
 
 
 def Sign_Win():
 
     layout = [
-        [sg.Text("")],
+
         [sg.Image(source='logo.png')],
         [sg.Text("")],
         [sg.Text("", key="Notify")],
@@ -15,14 +14,16 @@ def Sign_Win():
             "Middle name"), sg.Text("     "), sg.Text("Last name")],
         [sg.Input("", size=(16, 3), justification='centre', key="fname"), sg.Input("", size=(16, 3), key="mname",
                                                                                    justification='centre'), sg.Input("", size=(16, 3), key="lname", justification='centre')],
-        [sg.Text("Username"), sg.Text("     "), sg.Text("      "),
-         sg.Text("      "), sg.Text("Gender")],
-        [sg.Input("", size=(25, 3), justification='centre', key="Username"),
-         sg.Input("", size=(25, 3), justification='centre', key="GEND")],
+        [sg.Text("Username",)],
+        [sg.Input("", size=(55, 3), justification='centre', key="Username")], [
+            sg.OptionMenu(["Male", "Female", "Others"],
+                          default_value="Gender", key="Gender Menu", size=(50, 1), auto_size_text=False)],
         [sg.Text("Email")],
-        [sg.Input("", size=(50, 3), key="Email", justification="center")],
+        [sg.Input("", size=(55, 3), key="Email", justification="center")],
         [sg.Text("Address")],
-        [sg.Input("", size=(50, 3), key="Address", justification="center")],
+        [sg.Input("", size=(55, 3), key="Address", justification="center")],
+        [sg.OptionMenu(["Current", "Savings"],
+                       default_value="Account type", key="Account_Type", size=(50, 3), auto_size_text=True)],
         [sg.Text("     "), sg.Text("Password"), sg.Text("    "),
          sg.Text("   "), sg.Text("Confirm Password")],
         [sg.Input("", size=(25, 3), key="Password", justification="center", password_char="*"),
@@ -33,7 +34,7 @@ def Sign_Win():
     ]
 
     return sg.Window('Moneydroid - Sign Up', layout, element_justification="center", size=(
-        400, 600), resizable=True)
+        400, 600), resizable=True,)
 
 
 def SignUp():
@@ -45,8 +46,6 @@ def SignUp():
 
         event, values = window.read()
         filled = False
-        # print(values)
-        # print(event)
         if event == "Sign Up":
             for key in values:
                 if values[key] == '':
@@ -61,16 +60,12 @@ def SignUp():
             if filled:
 
                 try:
-                    if len(values["Password"]) <= 6:
-                        raise Exceptions.InvalidPasswordError(
-                            "Password to short!")
-                    else:
-                        signup.Regester(
-                            values["fname"], values["mname"], values["lname"], values["Address"], values["GEND"], values["Email"], values["Username"], values["Password"])
-                        window["Notify"].Update(
-                            "Sign up successful", text_color="Red")
-                        window.close()
-                        Login_GUI.Login()
+                    signup.Regester(
+                        values["fname"], values["mname"], values["lname"], values["Address"], values["Gender Menu"], values["Email"], values["Username"], values["Password"], values["Account_Type"])
+                    window["Notify"].Update(
+                        "Sign up successful", text_color="Red")
+                    window.close()
+                    Login_GUI.Login()
 
                 except Exception as e:
                     window["Notify"].Update(f"{e}", text_color="Red")
