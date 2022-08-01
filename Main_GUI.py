@@ -5,6 +5,7 @@ import Transfer_GUI
 import Withdraw_GUI
 import Deposit_GUI
 import Trans_log_GUI
+import Main_App
 font_huge = ("Arial", 20)
 font_small = ("Arial", 12)
 font_big = ("Arial", 15)
@@ -74,6 +75,3 @@ def Main(account):
 
     window.close()
 
-
-if __name__ == '__main__':
-    Main()

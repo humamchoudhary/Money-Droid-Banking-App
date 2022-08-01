@@ -28,7 +28,7 @@ def PB_Win():
         [sg.Text("Amount")],
         [sg.Input("", size=(50, 3), justification='centre', key="Amount")],
         [sg.Text("")],
-        [sg.Button("Pay", size=(30, 2))],
+        [sg.Button("Pay", size=(20, 2))],
         [sg.Button("Back", size=(10, 2))],
     ]
     return sg.Window('Moneydroid - Bill Payment', layout, size=(

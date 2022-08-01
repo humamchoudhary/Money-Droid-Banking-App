@@ -3,6 +3,8 @@ import App
 import Main_GUI
 from Exceptions import *
 from SignUp import *
+import Main_App
+
 font_big = ("Arial", 15)
 font_small = ("Arial", 12)
 db = App.DB()
@@ -29,7 +31,7 @@ def Trans_win():
                   size=(50, 2), justification="center")],
         [sg.Text("")],
         [sg.Text("")],
-        [sg.Button("Send", size=(30, 2))],
+        [sg.Button("Send", size=(20, 2))],
         [sg.Button("Back", size=(10, 2))],
     ]
 

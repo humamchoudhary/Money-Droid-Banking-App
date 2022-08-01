@@ -1,6 +1,8 @@
 import PySimpleGUI as sg
 import App
 import Main_GUI
+import Main_App
+
 font_small = ("Arial", 12)
 font_big = ("Arial", 15)
 
@@ -28,7 +30,7 @@ def Deposit_Win():
          sg.Input("", size=(24, 3), key="CVV", justification='centre')],
         [sg.Text("")],
 
-        [sg.Button("Submit", size=(30, 2))],
+        [sg.Button("Submit", size=(20, 2))],
         [sg.Button("Back", size=(10, 2))],
 
     ]
@@ -80,6 +82,3 @@ def Deposit(account):
 
     window.close()
 
-
-if __name__ == '__main__':
-    Deposit()

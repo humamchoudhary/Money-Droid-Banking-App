@@ -3,6 +3,8 @@ import App
 from Exceptions import *
 import Main_GUI
 from SignUp import *
+import Main_App
+
 font_huge = ("Arial", 20)
 font_small = ("Arial", 12)
 font_big = ("Arial", 15)
@@ -32,7 +34,7 @@ def withdraw_win():
                   size=(70, 3), justification='center')],
         [sg.Text("")],
         [sg.Text("")],
-        [sg.Button('Withdraw', size=(30, 2))],
+        [sg.Button('Withdraw', size=(20, 2))],
         [sg.Button('Back', size=(10, 2))],
     ]
 
@@ -61,7 +63,7 @@ def Withdraw(account):
                 window["Bal"].Update(f"{db.account.balance}")
 
             except Exception as e:
-                window['Notify'].Update(f"{e}")
+                window['Notify'].Update(f"{e}",text_color="Red")
                 # window['Notify'].Update(text_color="Red")
 
         if event == "Back":

@@ -2,6 +2,7 @@ from SignUp import *
 from tinydb import TinyDB, Query
 import pickle
 from Exceptions import *
+import Main_App
 
 
 class Login_Page:
@@ -39,6 +40,3 @@ class Login_Page:
     def Get_Account(self):
         return self.account
 
-
-if __name__ == '__main__':
-    login = Login_Page("Humam", "1234")

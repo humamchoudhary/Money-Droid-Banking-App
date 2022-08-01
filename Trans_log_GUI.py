@@ -4,6 +4,8 @@ import App
 from Exceptions import *
 import Main_GUI
 from SignUp import *
+import Main_App
+
 font_small = ("Arial", 13)
 font_big = ("Arial", 15)
 db = App.DB()

@@ -3,8 +3,8 @@ import uuid
 import pickle
 from Exceptions import *
 import hashlib
-from abc import ABC
-
+from abc import ABC,abstractmethod
+import Main_App
 
 class Person(ABC):
     def __init__(self, first_name, mid_name, last_name, gender):
@@ -33,6 +33,14 @@ class Account(Person):
         uuid_str = uuid.uuid1().urn
         self.__token = uuid_str[9:]
         return self.__token
+    
+    
+    def __add__(self,other):
+        self.balance += other
+    @abstractmethod
+    def Transection(self):
+        pass
+    
 
     @property
     def token(self):
@@ -46,8 +54,8 @@ class Account(Person):
 class Savings_Account(Account):
     intrest = 0.05
 
-    def Transection(self):
-        self.balance += self.balance * self.intrest
+    # def Transection(self):
+    #     self.balance += self.balance * self.intrest
 
 
 class Current_Account(Account):
@@ -72,6 +80,10 @@ class Signup_Page:
         accounts = {}
         Signup = False
         email = email.lower()
+        if '@' not in email and '.' not in email:
+            raise InvalidEmailError("Invalid Email!")
+        if len(password) < 5:
+            raise InvalidPasswordError("Password too short")
         password = password.encode()
         hash = hashlib.sha256(password)
         hashhex = hash.hexdigest()

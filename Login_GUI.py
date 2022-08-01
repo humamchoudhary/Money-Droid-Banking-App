@@ -3,7 +3,8 @@ import PySimpleGUI as sg
 import Main_GUI
 from SignUp import *
 import SignUp_GUI
-# import main_be
+import Main_App
+
 font_big = ("Arial", 15)
 font_small = ("Arial", 12)
 
@@ -17,15 +18,15 @@ def Window_Login():
         [sg.Text("")],
         [sg.Text("", key="Notify", text_color="Green")],
         [sg.Text('User Name', font=font_small)],
-        [sg.Input("", key="Username", size=(50, 3), justification='center')],
+        [sg.Input("", key="Username", size=(40, 3), justification='center')],
         [sg.Text("")],
         [sg.Text('Password', font=font_small)],
-        [sg.Input("", key="Password", size=(50, 3),
+        [sg.Input("", key="Password", size=(40, 3),
                   justification='center', password_char="*")],
         [sg.Text("")],
         [sg.Text("")],
-        [sg.Button('Login', size=(30, 2))],
-        [sg.Button('Register', size=(10, 2))],
+        [sg.Button('Login', size=(20, 2))],
+        [sg.Button('Register', size=(15, 2))],
     ]
 
     window = sg.Window('Money Droid - Login', layout, size=(
@@ -66,6 +67,3 @@ def Login():
 
     window.close()
 
-
-if __name__ == '__main__':
-    Login()

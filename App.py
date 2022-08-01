@@ -39,7 +39,7 @@ class DB:
             raise InvalidAccountNumberError("Invalid amount")
         if len(ref_num) == 14:
             if self.account.balance - amount >= 0:
-                self.account.balance -= amount  # Update account balance  ----update----
+                self.account - amount  # Update account balance  ----update----
                 self.Transection_Log("Incoming", amount,
                                      self.account, purpose=f"{bill_type} bill Payment")
                 self.Update(self.token, self.account)
@@ -95,7 +95,7 @@ class DB:
             # Raise invalid cvv ----error----
             raise InvalidCVVError("Invalid CVV")
         if transaction:
-            self.account.balance += amount  # Update account balance  ----update----
+            self.account + amount  # Update account balance  ----update----
             self.Transection_Log("Incoming", amount,
                                  self.account, "Deposit")
             self.Update(self.token, self.account)
@@ -135,7 +135,7 @@ class DB:
                 "Invalid account number")
         if transaction:
             if self.Check_Bal(amount):
-                self.account.balance -= amount  # Update account balance  ----update----
+                self.account - amount  # Update account balance  ----update----
                 data = self.DB.search(self.User.email == account_number)
                 self.Transection_Log("Outgoing", amount,
                                      self.account, "Withdraw")
@@ -160,8 +160,8 @@ class DB:
 
         else:
             if self.Check_Bal(amount):
-                self.account2.balance += amount
-                self.account.balance -= amount
+                self.account2 + amount
+                self.account - amount
                 # Update account balance  ----update----
                 self.Transection_Log("Outgoing", amount, self.account, purpose)
                 self.Update(self.token, self.account)

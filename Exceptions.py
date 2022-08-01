@@ -34,10 +34,13 @@ class InvalidPasswordError(Exception):
 
 
 class InvalidAmount(Exception):
-    "Invalid amount"
+    """Invalid amount"""
     pass
 
+class InvalidEmailError(Exception):
+    """Invalid Email"""
+    pass
 
 class InvalidRefNumber(Exception):
-    "Invalid Ref Number of the bill"
+    """Invalid Ref Number of the bill"""
     pass
