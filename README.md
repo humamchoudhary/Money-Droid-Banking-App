@@ -126,7 +126,7 @@ To setup this project locally on your computer follow the steps below.
 <br/>
 <br/>
 <strong>Main Menu</strong>: <br/>
-<img src="JPG" max-width="auto" height="600" />
+<img src="Main_Menu.JPG" max-width="auto" height="600" />
 <br/>
 <br/>
 <strong>Withdraw</strong>: <br/>
